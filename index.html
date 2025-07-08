@@ -4,23 +4,27 @@
   <meta charset="UTF-8">
   <title>Carolina ❤️ Guilherme</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
   <link href="assets/css/styles.css" rel="stylesheet">
 </head>
 <body>
   <div class="container">
-    <h1>Carolina ❤️ Guilherme</h1>
-    <div class="slider" id="slider"></div>
+    <h1>
+      <span class="names">Carolina</span>
+      <span class="heart">❤️</span>
+      <span class="names">Guilherme</span>
+    </h1>
 
-    <div class="buttons">
-      <a id="whatsapp-btn" href="#" target="_blank">💌 Enviar via WhatsApp</a>
-    </div>
+    <a id="whatsapp-btn" class="whatsapp" href="#" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" width="28" alt="WhatsApp" />
+      Enviar via WhatsApp
+    </a>
 
-    <audio controls loop>
+    <audio controls id="music-player">
       <source src="assets/musica.mp3" type="audio/mpeg">
       Seu navegador não suporta áudio HTML5.
     </audio>
   </div>
-  <div class="overlay"></div>
   <script src="assets/js/script.js"></script>
 </body>
 </html>
