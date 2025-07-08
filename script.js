@@ -1,6 +1,7 @@
 const imagens = [
   'assets/imagens/foto1.jpg',
   'assets/imagens/foto2.jpg',
+  'assets/imagens/foto3.jpg',
   // Adicione outras imagens aqui
 ];
 
@@ -13,7 +14,7 @@ imagens.forEach((src, i) => {
   img.classList.add('slide');
   img.style.opacity = 0;
   if (i === 0) {
-    img.classList.add('active');
+    img.classList.add('active');a
     setTimeout(() => { img.style.opacity = 1; }, 100);
   }
   slider.appendChild(img);
