@@ -1,8 +1,7 @@
 const imagens = [
-  'assets/imagens/foto1.jpg',
-  'assets/imagens/foto2.jpg',
-  'assets/imagens/foto3.jpg',
-  // Adicione outras imagens aqui
+  'assets/Imagens/foto1.jpg',
+  'assets/Imagens/foto2.jpg',
+  'assets/Imagens/foto3.jpg'
 ];
 
 const slider = document.getElementById('slider');
@@ -14,7 +13,7 @@ imagens.forEach((src, i) => {
   img.classList.add('slide');
   img.style.opacity = 0;
   if (i === 0) {
-    img.classList.add('active');a
+    img.classList.add('active');
     setTimeout(() => { img.style.opacity = 1; }, 100);
   }
   slider.appendChild(img);
@@ -32,7 +31,7 @@ setInterval(() => {
 // Envio WhatsApp
 const whatsBtn = document.getElementById('whatsapp-btn');
 const numero = '47999471966';
-const urlApp = 'https://guilhermeglr.github.io/amorapp/'; // <- link da versão online
+const urlApp = 'https://guilhermeglr.github.io/amorapp/';
 const mensagemTexto = `Oi vida, criei esse app para não deixar passar em branco.
 Não é como um presente grandioso como você, mas fiz com muito carinho! 💖
 
