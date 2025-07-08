@@ -1,42 +1,21 @@
-// Carrossel de imagens - ajuste os nomes conforme suas imagens reais
-const imagens = [
-  'assets/Imagens/foto1.jpg',
-  'assets/Imagens/foto2.jpg',
-  'assets/Imagens/foto3.jpg'
+// Atualizar data e hora
+document.getElementById('date').textContent = new Date().toLocaleDateString();
+
+// Mensagem do dia dinâmica
+const dailyMessages = [
+  "Você é meu lugar favorito no mundo. 💕",
+  "Te amo mais que tudo. 🌹",
+  "Meu coração é seu para sempre. 💖",
+  "Você ilumina meu dia como ninguém. 🥰",
+  "Cada dia ao seu lado é especial. 💘"
 ];
-
-const slider = document.getElementById('slider');
-let current = 0;
-
-imagens.forEach((src, i) => {
-  const img = document.createElement('img');
-  img.src = src;
-  img.classList.add('slide');
-  img.style.opacity = 0;
-  if (i === 0) {
-    img.classList.add('active');
-    img.style.opacity = 1;
-  }
-  slider.appendChild(img);
+document.getElementById('daily-message').addEventListener('click', () => {
+  const message = dailyMessages[Math.floor(Math.random() * dailyMessages.length)];
+  alert(message);
 });
-
-setInterval(() => {
-  const slides = document.querySelectorAll('.slide');
-  slides[current].style.opacity = 0;
-  slides[current].classList.remove('active');
-  current = (current + 1) % slides.length;
-  slides[current].classList.add('active');
-  slides[current].style.opacity = 1;
-}, 3500);
 
 // WhatsApp botão funcional
 const whatsBtn = document.getElementById('whatsapp-btn');
 const numero = '47999471966';
-const urlApp = 'https://guilhermeglr.github.io/amorapp/';
-const mensagemTexto = `Oi vida, criei esse app para não deixar passar em branco.
-Não é como um presente grandioso como você, mas fiz com muito carinho! 💖
-
-✨ Veja com carinho aqui: ${urlApp}`;
-const mensagem = encodeURIComponent(mensagemTexto);
-whatsBtn.href = `https://wa.me/${numero}?text=${mensagem}`;
-// NÃO coloque nenhum addEventListener de click aqui!
+const mensagemTexto = `Oi vida, criei este app para não deixar passar em branco. 💖`;
+whatsBtn.href = `https://wa.me/${numero}?text=${encodeURIComponent(mensagemTexto)}`;
