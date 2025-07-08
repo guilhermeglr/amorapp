@@ -1,9 +1,8 @@
-// Carrossel de imagens (atualize os caminhos conforme suas imagens)
+// Carrossel de imagens - ajuste os nomes conforme suas imagens reais
 const imagens = [
   'assets/Imagens/foto1.jpg',
   'assets/Imagens/foto2.jpg',
   'assets/Imagens/foto3.jpg'
-  // adicione mais se quiser
 ];
 
 const slider = document.getElementById('slider');
@@ -30,7 +29,7 @@ setInterval(() => {
   slides[current].style.opacity = 1;
 }, 3500);
 
-// WhatsApp botão
+// WhatsApp botão funcional
 const whatsBtn = document.getElementById('whatsapp-btn');
 const numero = '47999471966';
 const urlApp = 'https://guilhermeglr.github.io/amorapp/';
@@ -38,11 +37,6 @@ const mensagemTexto = `Oi vida, criei esse app para não deixar passar em branco
 Não é como um presente grandioso como você, mas fiz com muito carinho! 💖
 
 ✨ Veja com carinho aqui: ${urlApp}`;
-
 const mensagem = encodeURIComponent(mensagemTexto);
 whatsBtn.href = `https://wa.me/${numero}?text=${mensagem}`;
-
-whatsBtn.addEventListener('click', function(e){
-  // Não previne, apenas abre em nova guia ao clicar
-  window.open(whatsBtn.href, '_blank');
-});
+// NÃO coloque nenhum addEventListener de click aqui!
