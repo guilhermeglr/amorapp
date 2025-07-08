@@ -1,67 +1,94 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
 body {
   min-height: 100vh;
-  margin: 0;
-  background: radial-gradient(circle at 50% 60%, #ffb6d5 0%, #7a2855 100%);
+  background: linear-gradient(135deg, #ff74a7 0%, #6e1d47 100%);
   font-family: 'Poppins', Arial, sans-serif;
   position: relative;
   overflow-x: hidden;
-}
-.hearts-bg {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  background-image: url('https://i.imgur.com/0v4uQG9.png'); /* PNG transparente de corações, pode trocar por outro */
-  opacity: 0.11;
-  pointer-events: none;
-  background-size: 350px;
-  background-repeat: repeat;
-  animation: bgmove 17s linear infinite alternate;
-}
-@keyframes bgmove {
-  0% {background-position: 0 0;}
-  100% {background-position: 200px 120px;}
+  color: #2e112c;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.container {
-  position: relative;
+.emojis-bg {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  top: 0; left: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.emoji {
+  position: absolute;
+  font-size: 2.7rem;
+  opacity: 0.20;
+  animation: floatY 8s linear infinite;
+}
+.emoji:nth-child(1) { left: 7vw; top: 10vh; }
+.emoji:nth-child(2) { left: 75vw; top: 32vh; }
+.emoji:nth-child(3) { left: 18vw; top: 60vh; }
+.emoji:nth-child(4) { left: 65vw; top: 71vh; }
+.emoji:nth-child(5) { left: 43vw; top: 21vh; }
+@keyframes floatY {
+  0% { transform: translateY(0) scale(1);}
+  50% { transform: translateY(-30px) scale(1.15);}
+  100% { transform: translateY(0) scale(1);}
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   z-index: 1;
+  position: relative;
+  min-height: 80vh;
+  padding: 32px 12px 24px 12px;
+  background: rgba(255,255,255,0.93);
+  border-radius: 22px;
   max-width: 430px;
-  margin: 62px auto 0 auto;
-  background: rgba(255,255,255,0.94);
-  border-radius: 20px;
+  margin: 54px auto 0 auto;
   box-shadow: 0 8px 40px #a02060cc;
-  padding: 48px 24px 36px 24px;
-  text-align: center;
 }
 
 h1 {
   font-family: 'Pacifico', cursive;
-  font-size: 2.6rem;
+  font-size: 2.5rem;
   color: #e23f7c;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
+  gap: 10px;
   letter-spacing: 1px;
 }
 .heart-anim {
   animation: pulse 1s infinite alternate;
-  font-size: 2.4rem;
+  font-size: 2.1rem;
 }
 @keyframes pulse {
-  to { transform: scale(1.24) rotate(-10deg);}
+  to { transform: scale(1.18) rotate(-8deg);}
 }
 
 .slider {
-  width: 100%;
-  height: 260px;
-  margin: 0 auto 26px auto;
+  width: 98%;
+  max-width: 330px;
+  height: 210px;
+  margin: 0 auto 20px auto;
   position: relative;
-  border-radius: 18px;
+  border-radius: 14px;
   overflow: hidden;
-  box-shadow: 0 3px 13px #e23f7c44;
+  box-shadow: 0 2px 11px #e23f7c49;
   background: #ffd1e4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .slide {
   position: absolute;
@@ -75,11 +102,12 @@ h1 {
 }
 
 audio {
-  width: 100%;
-  margin: 18px 0 22px 0;
-  border-radius: 12px;
+  width: 98%;
+  margin: 12px 0 18px 0;
+  border-radius: 14px;
   background: #f8e6ef;
   box-shadow: 0 2px 10px #e23f7c33;
+  display: block;
 }
 
 .whatsapp-btn {
@@ -90,51 +118,47 @@ audio {
   color: #fff;
   border: none;
   border-radius: 30px;
-  padding: 13px 26px;
-  font-size: 1.15em;
+  padding: 12px 25px;
+  font-size: 1.08em;
   font-weight: bold;
   cursor: pointer;
   text-decoration: none;
   box-shadow: 0 2px 10px #d633846c;
   transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
   margin-top: 8px;
+  margin-bottom: 6px;
 }
 .whatsapp-btn:hover {
   background: linear-gradient(90deg,#d63384 0%, #ff80b7 100%);
-  transform: scale(1.06) rotate(-2deg);
+  transform: scale(1.05) rotate(-2deg);
   box-shadow: 0 4px 22px #d6338499;
 }
 .waicon {
-  font-size: 1.35em;
+  font-size: 1.3em;
   animation: shake 1.2s infinite;
 }
 @keyframes shake {
   0% { transform: rotate(0deg);}
-  20% { transform: rotate(-17deg);}
-  40% { transform: rotate(13deg);}
-  60% { transform: rotate(-8deg);}
-  80% { transform: rotate(7deg);}
+  20% { transform: rotate(-14deg);}
+  40% { transform: rotate(10deg);}
+  60% { transform: rotate(-6deg);}
+  80% { transform: rotate(5deg);}
   100% { transform: rotate(0deg);}
 }
 
-/* Emojis flutuantes animados */
-.emoji-float {
-  position: fixed;
-  font-size: 2.1rem;
-  z-index: 10;
-  animation: float 8s infinite linear;
-  pointer-events: none;
-  opacity: 0.9;
-}
-@keyframes float {
-  0% { transform: translateY(0) scale(0.95);}
-  50% { transform: translateY(-50px) scale(1.2);}
-  100% { transform: translateY(0) scale(0.95);}
+footer {
+  width: 100vw;
+  text-align: center;
+  color: #fff;
+  font-size: 1.05em;
+  font-family: 'Poppins', Arial, sans-serif;
+  margin: 0 0 18px 0;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 3px #e23f7c88;
 }
 
-/* Ajuste para mobile */
 @media (max-width: 600px) {
-  .container { max-width: 98vw; padding: 18vw 5vw 10vw 5vw;}
-  .slider { height: 37vw;}
-  .emoji-float { font-size: 7vw;}
+  .main-container { max-width: 99vw; min-height: 92vh; padding: 8vw 2vw 10vw 2vw; }
+  .slider { max-width: 98vw; height: 41vw; min-height: 110px;}
+  .emoji { font-size: 8vw; }
 }

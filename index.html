@@ -8,32 +8,32 @@
   <link href="assets/css/styles.css" rel="stylesheet">
 </head>
 <body>
-  <div class="hearts-bg"></div>
-  <div class="container">
+  <div class="emojis-bg">
+    <span class="emoji" style="animation-delay:0s;">💖</span>
+    <span class="emoji" style="animation-delay:1.2s;">💘</span>
+    <span class="emoji" style="animation-delay:2s;">💞</span>
+    <span class="emoji" style="animation-delay:2.7s;">🌹</span>
+    <span class="emoji" style="animation-delay:3.5s;">🥰</span>
+  </div>
+  <main class="main-container">
     <h1>
-      <span class="names">Carolina</span> 
-      <span class="heart-anim">❤️</span> 
+      <span class="names">Carolina</span>
+      <span class="heart-anim">❤️</span>
       <span class="names">Guilherme</span>
     </h1>
     <div class="slider" id="slider"></div>
-
     <audio controls id="music-player">
       <source src="assets/musica.mp3" type="audio/mpeg">
       Seu navegador não suporta áudio HTML5.
     </audio>
-
-    <a id="whatsapp-btn" class="whatsapp-btn" target="_blank">
-      <span class="waicon">💌</span> Enviar Mensagem de Amor 💕
+    <a id="whatsapp-btn" class="whatsapp-btn" target="_blank" title="Enviar mensagem no WhatsApp">
+      <span class="waicon">💌</span>
+      Enviar Mensagem de Amor
     </a>
-  </div>
-
-  <!-- Emojis animados flutuando -->
-  <div class="emoji-float" style="top:10%;left:15%">💖</div>
-  <div class="emoji-float" style="top:35%;left:80%">💘</div>
-  <div class="emoji-float" style="top:60%;left:5%">💞</div>
-  <div class="emoji-float" style="top:75%;left:60%">🌹</div>
-  <div class="emoji-float" style="top:20%;left:55%">🥰</div>
-
+  </main>
+  <footer>
+    <p>Feito com <span style="color:#e23f7c;">♥</span> por Guilherme para Carolina</p>
+  </footer>
   <script src="assets/js/script.js"></script>
 </body>
 </html>

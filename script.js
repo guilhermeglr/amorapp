@@ -1,3 +1,4 @@
+// Carrossel de imagens (atualize os caminhos conforme suas imagens)
 const imagens = [
   'assets/Imagens/foto1.jpg',
   'assets/Imagens/foto2.jpg',
@@ -42,6 +43,6 @@ const mensagem = encodeURIComponent(mensagemTexto);
 whatsBtn.href = `https://wa.me/${numero}?text=${mensagem}`;
 
 whatsBtn.addEventListener('click', function(e){
-  e.preventDefault();
+  // Não previne, apenas abre em nova guia ao clicar
   window.open(whatsBtn.href, '_blank');
 });
